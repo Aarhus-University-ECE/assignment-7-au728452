@@ -11,7 +11,7 @@ extern "C"
 
 TEST_CASE("taylor_sine")
 {
-    REQUIRE_THAT(taylor_sine(3.1415, 4),
+    REQUIRE_THAT(taylor_sine(3.1415, 7),
         Catch::Matchers::WithinRel(0.000093, 0.05));
 
     REQUIRE_THAT(taylor_sine(1.57075, 10),
