@@ -20,6 +20,18 @@ TEST_CASE("taylor_sine")
     REQUIRE_THAT(taylor_sine(0, 1),
         Catch::Matchers::WithinRel(0, 0.05));
     
+    REQUIRE_THAT(taylor_sine(1.999, 7),
+        Catch::Matchers::WithinRel(0.909713, 0.05));
+
+    REQUIRE_THAT(taylor_sine(4, 7),
+        Catch::Matchers::WithinRel(-0.818277, 0.05));
+    
+ 
+    /*In testing the Taylor Sine function, I found that the taylor sine function gives a similar result to the ANSI C sin function found in math.h in the interval of approximately 0 to 3.14, being the value of pi.*/
+    /*As soon as you go over the value of pi, the taylor sine function beings to deviate from the ANSI C sin function by a larger amount, the farther that you go over 3.14*/
+    /*The same goes for when using different levels of percision, when you calculate with a low level of percision, the answer is not precise enough*/
+    /*But if your precision is too high, the number will go from being precise to getting an increasingly large value, that is way too large*/
+
 }
 
 TEST_CASE("stack"){
